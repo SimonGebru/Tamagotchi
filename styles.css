@@ -10,7 +10,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #f0f8ff; /* Ljusblå bakgrund för att skapa himmelkänsla */
+  background-color: rgba(245, 222, 179, 0.562); /* Ljusblå bakgrund för att skapa himmelkänsla */
   font-family: Arial, sans-serif;
 }
 
@@ -32,11 +32,12 @@ body {
   position: relative;
 }
 
+
 /* Skärmen */
 #screen {
   background-color: #e6e6e6d7;
-  width: 180px;
-  height: 170px;
+  width: 210px;
+  height: 180px;
   border: 5px solid #333;
   border-radius: 10px;
   position: relative;
@@ -45,7 +46,7 @@ body {
   align-items: center;
   padding: 10px;
   margin-bottom: 20px;
-  margin-top: 40px;
+  margin-top: 50px;
 }
 
 #status {
@@ -81,55 +82,56 @@ body {
 
 /* Husdjuret */
 #tamagotchi {
-    width: 60px;
-    height: 80px;
-    background-color: green; /* Normal färg för husdjuret */
-    border-radius: 50% 50% 45% 45%; /* Ger en lite oval form som ser mer ut som en kropp */
-    position: relative;
-    margin-top: 25px;
-    transition: background-color 0.5s, opacity 0.5s; /* Mjuk övergång när färgen ändras */
+  width: 60px;
+  height: 80px;
+  margin-top: 25px;
+  background-color: green; /* Normal färg för husdjuret */
+  border-radius: 50% 50% 4% 4%; /* Oval form för kropp */
+  position: absolute; /* Viktigt för att kunna flytta elementet */
+  transition: background-color 0.5s, opacity 0.5s, transform 0.5s ease; /* Mjuk övergång för färg, opacity och förflyttning */
+  opacity: 1; /* Standardvärde för synlighet */
 }
 
 /* Ögon */
 .eye {
-    width: 10px;
-    height: 10px;
-    background-color: white;
-    border-radius: 50%;
-    position: absolute;
-    top: 25px;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 25px;
 }
 
 .left-eye {
-    left: 15px;
+  left: 15px;
 }
 
 .right-eye {
-    right: 15px;
+  right: 15px;
 }
 
 /* Pupiller */
 .eye::before {
-    content: '';
-    width: 5px;
-    height: 5px;
-    background-color: black;
-    border-radius: 50%;
-    position: absolute;
-    top: 2px;
-    left: 2px;
+  content: "";
+  width: 5px;
+  height: 5px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
 }
 
 /* Mun */
 .mouth {
-    width: 20px;
-    height: 10px;
-    background-color: black;
-    border-radius: 0 0 10px 10px;
-    position: absolute;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
+  width: 20px;
+  height: 10px;
+  background-color: black;
+  border-radius: 0 0 10px 10px;
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /* Kontroller - Knapparna */
@@ -148,7 +150,7 @@ body {
   cursor: pointer;
   font-size: 12px;
   transition: background-color 0.3s;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 #controls button:hover {
