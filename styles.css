@@ -1,94 +1,165 @@
 /* Grundläggande layout */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f0f8ff; /* Ljusblå bakgrund för att skapa himmelkänsla */
-    font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f8ff; /* Ljusblå bakgrund för att skapa himmelkänsla */
+  font-family: Arial, sans-serif;
 }
 
 /* Tamagotchi-enhet */
 #tamagotchi-device {
-    background: linear-gradient(135deg, #330033, #660066); /* Gradering för enhetens färg */
-    border-radius: 50% / 45%;
-    width: 300px;
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 20px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    position: relative;
+  background: linear-gradient(
+    135deg,
+    #330033,
+    #660066
+  ); /* Gradering för enhetens färg */
+  border-radius: 50% / 45%;
+  width: 300px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  position: relative;
 }
 
 /* Skärmen */
 #screen {
-    background-color: #e6e6e6;
-    width: 180px;
-    height: 170px;
-    border: 5px solid #333;
-    border-radius: 10px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    margin-bottom: 20px;
-    margin-top: 40px;
+  background-color: #e6e6e6d7;
+  width: 180px;
+  height: 170px;
+  border: 5px solid #333;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+#status {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#hunger-indicator {
+  position: absolute;
+  top: 1px;
+  left: 5px;
+  font-size: 10px;
+  color: #333;
+}
+
+#happiness-indicator {
+  position: absolute;
+  top: 1px;
+  right: 5px;
+  font-size: 10px;
+  color: #333;
+}
+
+#energy-indicator {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  color: #333;
 }
 
 /* Husdjuret */
 #tamagotchi {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 80px;
     background-color: green; /* Normal färg för husdjuret */
-    border-radius: 50%;
-    transition: background-color 0.5s; /* Mjuk övergång när färgen ändras */
+    border-radius: 50% 50% 45% 45%; /* Ger en lite oval form som ser mer ut som en kropp */
+    position: relative;
+    margin-top: 25px;
+    transition: background-color 0.5s, opacity 0.5s; /* Mjuk övergång när färgen ändras */
 }
 
-/* Statusindikatorer */
-#status {
-    font-size: 12px;
-    color: #333;
-    text-align: center;
-    margin-top: 10px;
+/* Ögon */
+.eye {
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 25px;
+}
+
+.left-eye {
+    left: 15px;
+}
+
+.right-eye {
+    right: 15px;
+}
+
+/* Pupiller */
+.eye::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+
+/* Mun */
+.mouth {
+    width: 20px;
+    height: 10px;
+    background-color: black;
+    border-radius: 0 0 10px 10px;
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* Kontroller - Knapparna */
 #controls {
-    display: flex;
-    gap: 5px;
+  display: flex;
+  gap: 5px;
 }
 
 #controls button {
-    width: 60px;
-    height: 50px;
-    background-color: #444;
-    color: white;
-    border: none;
-    border-radius: 50%; 
-    cursor: pointer;
-    font-size: 12px;
-    transition: background-color 0.3s;
-    margin-top: 40px;
+  width: 60px;
+  height: 50px;
+  background-color: #444;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.3s;
+  margin-top: 40px;
 }
 
 #controls button:hover {
-    background-color: #333; /* Mörkare nyans vid hover */
+  background-color: #333; /* Mörkare nyans vid hover */
 }
 
 /* Anpassad färg när djuret inte mår bra */
 .danger {
-    background-color: red; /* Färg när husdjuret har låg hälsa */
+  background-color: red; /* Färg när husdjuret har låg hälsa */
 }
 
 .warning {
-    background-color: yellow; /* Färg när husdjuret börjar må dåligt */
+  background-color: yellow; /* Färg när husdjuret börjar må dåligt */
 }

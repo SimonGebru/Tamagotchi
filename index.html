@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="sv">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Virtuellt Husdjur</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
-</head>
-<body>
-
+  </head>
+  <body>
     <div id="tamagotchi-device">
-        <!-- "Skärmen" där husdjuret visas -->
-        <div id="screen">
-            <div id="tamagotchi"></div>
-            <!-- Statusindikatorer -->
-            <div id="status">
-                <p>Hunger: <span id="hunger">50</span></p>
-                <p>Glädje: <span id="happiness">50</span></p>
-                <p>Energi: <span id="energy">50</span></p>
-            </div>
+      <!-- "Skärmen" där husdjuret visas -->
+      <div id="screen">
+        <div id="tamagotchi">
+            <div class="eye left-eye"></div>
+            <div class="eye right-eye"></div>
+            <div class="mouth"></div>
         </div>
+        <!-- Statusindikatorer -->
+        <div id="status">
+          <div id="hunger-indicator">Hunger: <span id="hunger">50</span></div>
+          <div id="happiness-indicator"> Glädje: <span id="happiness">50</span></div>
+          <div id="energy-indicator">Energi: <span id="energy">50</span></div>
+        </div>
+      </div>
 
-        <!-- Knappar -->
-        <div id="controls">
-            <button id="feed">Mata</button>
-            <button id="play">Lek</button>
-            <button id="sleep">Sov</button>
-        </div>
+      <!-- Knappar -->
+      <div id="controls">
+        <button id="feed">Mata</button>
+        <button id="play">Lek</button>
+        <button id="sleep">Sov</button>
+      </div>
     </div>
-</body>
+  </body>
 </html>
