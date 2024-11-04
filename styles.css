@@ -1,0 +1,94 @@
+/* Grundläggande layout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f8ff; /* Ljusblå bakgrund för att skapa himmelkänsla */
+    font-family: Arial, sans-serif;
+}
+
+/* Tamagotchi-enhet */
+#tamagotchi-device {
+    background: linear-gradient(135deg, #330033, #660066); /* Gradering för enhetens färg */
+    border-radius: 50% / 45%;
+    width: 300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+/* Skärmen */
+#screen {
+    background-color: #e6e6e6;
+    width: 180px;
+    height: 170px;
+    border: 5px solid #333;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+
+/* Husdjuret */
+#tamagotchi {
+    width: 50px;
+    height: 50px;
+    background-color: green; /* Normal färg för husdjuret */
+    border-radius: 50%;
+    transition: background-color 0.5s; /* Mjuk övergång när färgen ändras */
+}
+
+/* Statusindikatorer */
+#status {
+    font-size: 12px;
+    color: #333;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Kontroller - Knapparna */
+#controls {
+    display: flex;
+    gap: 5px;
+}
+
+#controls button {
+    width: 60px;
+    height: 50px;
+    background-color: #444;
+    color: white;
+    border: none;
+    border-radius: 50%; 
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.3s;
+    margin-top: 40px;
+}
+
+#controls button:hover {
+    background-color: #333; /* Mörkare nyans vid hover */
+}
+
+/* Anpassad färg när djuret inte mår bra */
+.danger {
+    background-color: red; /* Färg när husdjuret har låg hälsa */
+}
+
+.warning {
+    background-color: yellow; /* Färg när husdjuret börjar må dåligt */
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtuellt Husdjur</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <div id="tamagotchi-device">
+        <!-- "Skärmen" där husdjuret visas -->
+        <div id="screen">
+            <div id="tamagotchi"></div>
+            <!-- Statusindikatorer -->
+            <div id="status">
+                <p>Hunger: <span id="hunger">50</span></p>
+                <p>Glädje: <span id="happiness">50</span></p>
+                <p>Energi: <span id="energy">50</span></p>
+            </div>
+        </div>
+
+        <!-- Knappar -->
+        <div id="controls">
+            <button id="feed">Mata</button>
+            <button id="play">Lek</button>
+            <button id="sleep">Sov</button>
+        </div>
+    </div>
+</body>
+</html>
